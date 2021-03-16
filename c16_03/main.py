@@ -8,3 +8,19 @@ note7 = ('eleve2', 'math', 13)
 note8 = ('eleve2', 'math', 14)
 
 notes = [note1, note2, note3, note4, note5, note6,note7,note8]
+
+#Question 4 a
+def somme(liste):
+    somme = 0
+    for i in liste:
+        somme = somme + i
+    return somme
+
+def moyenne(liste):
+    return somme(liste)/len(liste)
+
+print(somme(notes))
+
+print(moyenne(notes))
+
+#Question 4 b
