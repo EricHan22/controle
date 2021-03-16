@@ -10,17 +10,56 @@ note8 = ('eleve2', 'math', 14)
 notes = [note1, note2, note3, note4, note5, note6,note7,note8]
 
 #Question 4 a
-def somme(liste):
-    somme = 0
-    for i in liste:
-        somme = somme + i
-    return somme
-
 def moyenne(liste):
-    return somme(liste)/len(liste)
-
-print(somme(notes))
+    somme = []
+    for note in liste:
+      if note[0] == "eleve1":
+        somme.append(note[2])
+    return sum(somme)/len(somme)
 
 print(moyenne(notes))
 
+
+
 #Question 4 b
+def moyennemath(liste):
+    somme = []
+    for note in liste:
+      if note[0] == "eleve1" and note[1] == "math":
+        somme.append(note[2])
+    return sum(somme)/len(somme)
+
+print(moyennemath(notes))
+
+
+#Question 4 c
+def moyenne_tuples(liste, eleve, matiere):
+  somme = []
+  for note in liste:
+    if note[0] == eleve and note[1] == matiere:
+      somme.append(note[2])
+    return sum(somme)/len(somme)
+
+print(moyenne_tuples(notes, "eleve1", "math"))
+
+#Question 5
+class Note:
+  def __init__(self, eleve, matiere, valeur): 
+    self.eleve = eleve
+    self.matiere = matiere
+    self.valeur = valeur
+
+
+  def afficher(self):
+    print('eleve', self.eleve, 'matiere', self.matiere, 'note', self.valeur)
+
+
+onotes = Note('eleve1', 'maths', 13)
+print(onotes.eleve)
+print(onotes.matiere)
+print(onotes.valeur)
+Note.afficher(onotes)
+
+
+
+
