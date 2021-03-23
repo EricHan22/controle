@@ -1,0 +1,143 @@
+================================================ test session starts ================================================
+platform linux -- Python 3.9.2, pytest-6.2.2, py-1.10.0, pluggy-0.13.1
+rootdir: /home/stidsem4/iut/2021/controle/eric.han/c16_03
+collected 7 items
+
+test_16_03.py F.FF..F                                                                                         [100%]
+
+===================================================== FAILURES ======================================================
+_______________________________________________ Test1603sute.test_10 ________________________________________________
+
+self = <c16_03.test_16_03.Test1603sute testMethod=test_10>
+
+    def test_10(self):
+        try:
+            from .main  import Note
+        except:
+           assert False
+        try:
+>           Note.vider()
+E           AttributeError: type object 'Note' has no attribute 'vider'
+
+test_16_03.py:98: AttributeError
+
+During handling of the above exception, another exception occurred:
+
+self = <c16_03.test_16_03.Test1603sute testMethod=test_10>
+
+    def test_10(self):
+        try:
+            from .main  import Note
+        except:
+           assert False
+        try:
+            Note.vider()
+        except:
+>           assert False
+E           AssertionError: assert False
+
+test_16_03.py:100: AssertionError
+----------------------------------------------- Captured stdout call ------------------------------------------------
+4.a)
+13.0
+4.b)
+12.666666666666666
+4.c)
+13.0
+5)
+eleve1
+maths
+13
+eleve eleve1 matiere maths note 13
+eleve eleve1 matiere maths note 13
+eleve eleve1 matiere math note 13
+eleve eleve1 matiere physique note 15
+eleve eleve1 matiere math note 13
+eleve eleve1 matiere eco note 12
+eleve eleve1 matiere eco note 13
+eleve eleve1 matiere math note 12
+eleve eleve2 matiere math note 13
+eleve eleve2 matiere math note 14
+6)
+Note('eleve1','maths','13')
+[<c16_03.main.Note object at 0x7fde6653f850>, <c16_03.main.Note object at 0x7fde6653f8b0>, <c16_03.main.Note object at 0x7fde6653f910>, <c16_03.main.Note object at 0x7fde6653f970>, <c16_03.main.Note object at 0x7fde6653f9d0>, <c16_03.main.Note object at 0x7fde6653fa30>, <c16_03.main.Note object at 0x7fde6653fa90>, <c16_03.main.Note object at 0x7fde6653faf0>, ('eleve1', 'maths', 11)]
+8)
+13.125
+12.5
+________________________________________________ Test1603sute.test_4 ________________________________________________
+
+self = <c16_03.test_16_03.Test1603sute testMethod=test_4>
+
+    def test_4(self):
+        try:
+>           from main import moyenne_tuples
+E           ImportError: cannot import name 'moyenne_tuples' from 'main' (/home/stidsem4/iut/2021/controle/eric.han/main.py)
+
+test_16_03.py:16: ImportError
+
+During handling of the above exception, another exception occurred:
+
+self = <c16_03.test_16_03.Test1603sute testMethod=test_4>
+
+    def test_4(self):
+        try:
+            from main import moyenne_tuples
+        except ImportError:
+            try:
+>               from .main import moyenne_tuple as moyenne_tuples
+E               ImportError: cannot import name 'moyenne_tuple' from 'c16_03.main' (/home/stidsem4/iut/2021/controle/eric.han/c16_03/main.py)
+
+test_16_03.py:19: ImportError
+
+During handling of the above exception, another exception occurred:
+
+self = <c16_03.test_16_03.Test1603sute testMethod=test_4>
+
+    def test_4(self):
+        try:
+            from main import moyenne_tuples
+        except ImportError:
+            try:
+                from .main import moyenne_tuple as moyenne_tuples
+            except ImportError:
+>               assert False, "moyenne_tuples non définie"
+E               AssertionError: moyenne_tuples non définie
+E               assert False
+
+test_16_03.py:21: AssertionError
+________________________________________________ Test1603sute.test_5 ________________________________________________
+
+self = <c16_03.test_16_03.Test1603sute testMethod=test_5>
+
+    def test_5(self):
+        try:
+            from .main  import Note, onotes
+        except:
+            assert False
+    
+        for onote in onotes:
+>           assert isinstance(onote, Note)
+E           AssertionError: assert False
+E            +  where False = isinstance(<c16_03.main.Note object at 0x7fde6653f1c0>, <class 'c16_03.main.Note'>)
+
+test_16_03.py:38: AssertionError
+________________________________________________ Test1603sute.test_9 ________________________________________________
+
+self = <c16_03.test_16_03.Test1603sute testMethod=test_9>
+
+    def test_9(self):
+        try:
+            from .main  import Note
+        except:
+           assert False
+>       assert hasattr(Note, 'instances')
+E       AssertionError: assert False
+E        +  where False = hasattr(<class 'c16_03.main.Note'>, 'instances')
+
+test_16_03.py:90: AssertionError
+============================================== short test summary info ==============================================
+FAILED test_16_03.py::Test1603sute::test_10 - AssertionError: assert False
+FAILED test_16_03.py::Test1603sute::test_4 - AssertionError: moyenne_tuples non définie
+FAILED test_16_03.py::Test1603sute::test_5 - AssertionError: assert False
+FAILED test_16_03.py::Test1603sute::test_9 - AssertionError: assert False
+============================================ 4 failed, 3 passed in 0.06s ============================================
