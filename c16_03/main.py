@@ -10,6 +10,7 @@ note8 = ('eleve2', 'math', 14)
 notes = [note1, note2, note3, note4, note5, note6,note7,note8]
 
 #Question 4 a
+print("4.a)")
 def moyenne(liste):
     somme = []
     for note in liste:
@@ -22,6 +23,7 @@ print(moyenne(notes))
 
 
 #Question 4 b
+print("4.b)")
 def moyennemath(liste):
     somme = []
     for note in liste:
@@ -33,6 +35,7 @@ print(moyennemath(notes))
 
 
 #Question 4 c
+print("4.c)")
 def moyenne_tuples(liste, eleve, matiere):
   somme = []
   for note in liste:
@@ -44,6 +47,7 @@ print(moyenne_tuples(notes, "eleve1", "math"))
 
 
 #Question 5
+print("5)")
 class Note:
   def __init__(self, eleve, matiere, valeur): 
     self.eleve = eleve
@@ -61,18 +65,38 @@ print(onote.matiere)
 print(onote.valeur)
 Note.afficher(onote)
 
-onotes = [Note(eleve, matiere, valeur) for eleve, matiere, valeur in notes]
-print(f"longueur de la liste : {len(onotes)}")
-
-
-#Question 6 
+onote.afficher()
+onotes = [Note(a,b,c) for a,b,c in notes]
 for onote in onotes:
   onote.afficher()
-  print(onote.valeur)
+
+#Question 6 
+print("6)")
+class Note:
+  def __init__(self, eleve, matiere, valeur):
+    self.eleve = eleve
+    self.matiere = matiere
+    self.valeur = valeur
+
+  def __str__(self):
+    return f"{self.__class__.__name__}('{self.eleve}','{self.matiere}','{self.valeur}')"
+
+onote = Note('eleve1', 'maths', 13)
+print(onote)
 
 
 #Question 7
 notes_enregistrées = [(Note(note[0], note[1], note[2])) for note in notes]
-notes_enregistrées.append(("eleve3", "math", 11))
-print(notes_enregistrées.afficher)
+notes_enregistrées.append(("eleve1", "maths", 11))
+print(notes_enregistrées)
 
+
+#Question 8
+print("8)")
+def moyenne_notes(notes, eleve = None, matiere = None):
+  note_eleve = [note for note in notes if note.eleve == eleve] if eleve is not None else notes
+  notes_matiere = [n for n in note_eleve if n.matiere == matiere] if matiere is not None else note_eleve
+  return sum([n.valeur for n in notes_matiere])/len(notes_matiere)
+
+print(moyenne_notes(onotes))
+print(moyenne_notes(onotes, 'eleve1', 'eco'))
