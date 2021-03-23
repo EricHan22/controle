@@ -61,4 +61,3 @@ print(onotes.valeur)
 Note.afficher(onotes)
 
 
-Print
