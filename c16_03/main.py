@@ -59,3 +59,6 @@ print(onotes.eleve)
 print(onotes.matiere)
 print(onotes.valeur)
 Note.afficher(onotes)
+
+
+Print
