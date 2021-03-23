@@ -61,28 +61,18 @@ print(onote.matiere)
 print(onote.valeur)
 Note.afficher(onote)
 
+onotes = [Note(eleve, matiere, valeur) for eleve, matiere, valeur in notes]
+print(f"longueur de la liste : {len(onotes)}")
+
 
 #Question 6 
-class Note:
-  def __init__(self, eleve, matiere, valeur):
-    self.eleve = eleve
-    self.matiere = matiere
-    self.valeur = valeur
-    self.afficher = ('eleve', self.eleve, 'matiere', self.matiere, 'note', self.valeur)
-
-
-onotes = [(Note(note[0], note[1], note[2])) for note in notes]
-print(onote.eleve)
-print(onote.matiere)
-print(onote.valeur)
-print(onote.afficher)
+for onote in onotes:
+  onote.afficher()
+  print(onote.valeur)
 
 
 #Question 7
 notes_enregistrées = [(Note(note[0], note[1], note[2])) for note in notes]
 notes_enregistrées.append(("eleve3", "math", 11))
 print(notes_enregistrées.afficher)
-
-
-
 
