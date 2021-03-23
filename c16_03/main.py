@@ -85,12 +85,6 @@ onote = Note('eleve1', 'maths', 13)
 print(onote)
 
 
-#Question 7
-notes_enregistrées = [(Note(note[0], note[1], note[2])) for note in notes]
-notes_enregistrées.append(("eleve1", "maths", 11))
-print(notes_enregistrées)
-
-
 #Question 8
 print("8)")
 def moyenne_notes(notes, eleve = None, matiere = None):
