@@ -21,6 +21,8 @@ print(moyenne(notes))
 
 
 
+
+
 #Question 4 b
 def moyennemath(liste):
     somme = []
