@@ -43,9 +43,7 @@ def moyenne_tuples(liste, eleve, matiere):
 print(moyenne_tuples(notes, "eleve1", "math"))
 
 
-
 #Question 5
-
 class Note:
   def __init__(self, eleve, matiere, valeur): 
     self.eleve = eleve
@@ -63,15 +61,8 @@ print(onote.matiere)
 print(onote.valeur)
 Note.afficher(onote)
 
-onotes = [(Note(note[0], note[1], note[2])) for note in notes]
-onote = onotes[1]
-print(onote)
-print(onote.eleve)
-print(onote.matiere)
-print(onote.valeur)
-Note.afficher(onote)
 
-#Question 6
+#Question 6 
 class Note:
   def __init__(self, eleve, matiere, valeur):
     self.eleve = eleve
@@ -85,3 +76,13 @@ print(onote.eleve)
 print(onote.matiere)
 print(onote.valeur)
 print(onote.afficher)
+
+
+#Question 7
+notes_enregistrées = [(Note(note[0], note[1], note[2])) for note in notes]
+notes_enregistrées.append(("eleve3", "math", 11))
+print(notes_enregistrées.afficher)
+
+
+
+
