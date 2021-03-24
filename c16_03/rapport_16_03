@@ -117,7 +117,7 @@ self = <c16_03.test_16_03.Test1603sute testMethod=test_5>
         for onote in onotes:
 >           assert isinstance(onote, Note)
 E           AssertionError: assert False
-E            +  where False = isinstance(<c16_03.main.Note object at 0x7fbbec392160>, <class 'c16_03.main.Note'>)
+E            +  where False = isinstance(<c16_03.main.Note object at 0x7f73a3fab0d0>, <class 'c16_03.main.Note'>)
 
 test_16_03.py:38: AssertionError
 _____________________________ Test1603sute.test_9 ______________________________
