@@ -49,15 +49,28 @@ print(moyenne_tuples(notes, "eleve1", "math"))
 #Question 5
 print("5)")
 class Note:
+  instances = []
   def __init__(self, eleve, matiere, valeur): 
     self.eleve = eleve
     self.matiere = matiere
     self.valeur = valeur
+    self.instances.append(self)
 
+  def __str__(self):
+    return f"{self.__class__.__name__}('{self.eleve}','{self.matiere}','{self.valeur}')"
+
+  @classmethod
+  def vider(cls):
+    cls.instances = []
 
   def afficher(self):
-    print('eleve', self.eleve, 'matiere', self.matiere, 'note', self.valeur)
+      print(self)
 
+  @classmethod
+  def moyenne(cls, eleve=None, matiere=None):
+      note_eleve = [note for note in cls.instances if note.eleve == eleve] if eleve is not None else notes
+      notes_matiere = [note for note in note_eleve if note.matiere == matiere] if matiere is not None else note_eleve
+      return sum([note.valeur for note in notes_matiere])/len(notes_matiere)
 
 onote = Note('eleve1', 'maths', 13)
 print(onote.eleve)
@@ -65,23 +78,11 @@ print(onote.matiere)
 print(onote.valeur)
 Note.afficher(onote)
 
-onote.afficher()
-onotes = [Note(a,b,c) for a,b,c in notes]
-for onote in onotes:
-  onote.afficher()
+onotes=[Note(a,b,c) for a,b,c in notes]
+Note.moyenne('eleve1', 'math')
 
 #Question 6 
 print("6)")
-class Note:
-  def __init__(self, eleve, matiere, valeur):
-    self.eleve = eleve
-    self.matiere = matiere
-    self.valeur = valeur
-
-  def __str__(self):
-    return f"{self.__class__.__name__}('{self.eleve}','{self.matiere}','{self.valeur}')"
-
-onote = Note('eleve1', 'maths', 13)
 print(onote)
 
 
@@ -89,8 +90,8 @@ print(onote)
 print("8)")
 def moyenne_notes(notes, eleve = None, matiere = None):
   note_eleve = [note for note in notes if note.eleve == eleve] if eleve is not None else notes
-  notes_matiere = [n for n in note_eleve if n.matiere == matiere] if matiere is not None else note_eleve
-  return sum([n.valeur for n in notes_matiere])/len(notes_matiere)
+  notes_matiere = [note for note in note_eleve if note.matiere == matiere] if matiere is not None else note_eleve
+  return sum([note.valeur for note in notes_matiere])/len(notes_matiere)
 
 print(moyenne_notes(onotes))
 print(moyenne_notes(onotes, 'eleve1', 'eco'))
