@@ -24,7 +24,7 @@ self = <c16_03.test_16_03.Test1603sute testMethod=test_4>
     
 >       assert moyenne_tuples((note1, note2), 'elv1', 'xx') == 10.5
 E       AssertionError: assert 10.0 == 10.5
-E        +  where 10.0 = <function moyenne_tuple at 0x7f2e69feeca0>((('elv1', 'xx', 10), ('elv1', 'xx', 11)), 'elv1', 'xx')
+E        +  where 10.0 = <function moyenne_tuple at 0x7ff210a67ca0>((('elv1', 'xx', 10), ('elv1', 'xx', 11)), 'elv1', 'xx')
 
 test_16_03.py:26: AssertionError
 =========================== short test summary info ============================
