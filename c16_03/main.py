@@ -43,7 +43,6 @@ def moyenne_tuples(liste, eleve, matiere):
       somme.append(note[2])
     return sum(somme)/len(somme)
 
-print(moyenne_tuples(notes, "eleve1", "math"))
 
 
 #Question 5
@@ -52,7 +51,7 @@ class Note:
   instances = []
   def __init__(self, eleve, matiere, valeur): 
     self.eleve = eleve
-    self.matiere = matiere
+    self.matiere = matiere 
     self.valeur = valeur
     self.instances.append(self)
 
