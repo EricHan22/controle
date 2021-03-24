@@ -36,13 +36,14 @@ print(moyennemath(notes))
 
 #Question 4 c
 print("4.c)")
-def moyenne_tuples(liste, eleve, matiere):
+def moyenne_tuple(liste, eleve, matiere):
   somme = []
   for note in liste:
     if note[0] == eleve and note[1] == matiere:
       somme.append(note[2])
     return sum(somme)/len(somme)
 
+print(moyenne_tuple(notes, "eleve1", "math"))
 
 
 #Question 5
@@ -79,6 +80,7 @@ Note.afficher(onote)
 
 onotes=[Note(a,b,c) for a,b,c in notes]
 Note.moyenne('eleve1', 'math')
+
 
 #Question 6 
 print("6)")
