@@ -12,41 +12,21 @@ self = <c16_03.test_16_03.Test1603sute testMethod=test_4>
 
     def test_4(self):
         try:
->           from main import moyenne_tuples
-E           ImportError: cannot import name 'moyenne_tuples' from 'main' (/home/stidsem4/iut/2021/controle/eric.han/main.py)
-
-test_16_03.py:16: ImportError
-
-During handling of the above exception, another exception occurred:
-
-self = <c16_03.test_16_03.Test1603sute testMethod=test_4>
-
-    def test_4(self):
-        try:
-            from main import moyenne_tuples
-        except ImportError:
-            try:
->               from .main import moyenne_tuple as moyenne_tuples
-E               ImportError: cannot import name 'moyenne_tuple' from 'c16_03.main' (/home/stidsem4/iut/2021/controle/eric.han/c16_03/main.py)
-
-test_16_03.py:19: ImportError
-
-During handling of the above exception, another exception occurred:
-
-self = <c16_03.test_16_03.Test1603sute testMethod=test_4>
-
-    def test_4(self):
-        try:
             from main import moyenne_tuples
         except ImportError:
             try:
                 from .main import moyenne_tuple as moyenne_tuples
             except ImportError:
->               assert False, "moyenne_tuples non définie"
-E               AssertionError: moyenne_tuples non définie
-E               assert False
+                assert False, "moyenne_tuples non définie"
+    
+        note1 = ('elv1', 'xx', 10)
+        note2 = ('elv1', 'xx', 11)
+    
+>       assert moyenne_tuples((note1, note2), 'elv1', 'xx') == 10.5
+E       AssertionError: assert 10.0 == 10.5
+E        +  where 10.0 = <function moyenne_tuple at 0x7f58757d7ca0>((('elv1', 'xx', 10), ('elv1', 'xx', 11)), 'elv1', 'xx')
 
-test_16_03.py:21: AssertionError
+test_16_03.py:26: AssertionError
 =========================== short test summary info ============================
-FAILED test_16_03.py::Test1603sute::test_4 - AssertionError: moyenne_tuples n...
-========================= 1 failed, 6 passed in 0.09s ==========================
+FAILED test_16_03.py::Test1603sute::test_4 - AssertionError: assert 10.0 == 10.5
+========================= 1 failed, 6 passed in 0.07s ==========================
